@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+
+{% from "button/macro.njk" import button %}
+{% from "summary-list/macro.njk" import summaryList %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">Check your answers before sending your application</h1>
+
+
+
+    
+
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Do you have symptoms?"
+            },
+            value: {
+              text: data.symptoms
+            },
+            actions: {
+              items: [
+                {
+                  href: "/symptoms",
+                  text: "Change",
+                  visuallyHiddenText: "whether you have symptoms"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Details of your symptoms"
+            },
+            value: {
+              text: data.details
+            },
+            actions: {
+              items: [
+                {
+                  href: "/details",
+                  text: "Change",
+                  visuallyHiddenText: "whether have any details"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="nhsuk-heading-m">
+        Now send your application
+      </h2>
+
+      <p>
+        We will review your answers and get back to you.
+      </p>
+
+      <form action="/form-handler" method="post" novalidate>
+        {{ button({
+          text: "Confirm and send"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

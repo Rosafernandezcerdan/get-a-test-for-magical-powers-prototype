@@ -16,7 +16,7 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/form-handler" method="post" novalidate>
+      <form action="/check-answers" method="post" novalidate>
 
        {% from "textarea/macro.njk" import textarea %}
 
@@ -29,8 +29,9 @@
   hint: {
     text: "For example, if you have temperature shifts, eye alterations or sensory overload"
   },
-  id: "example",
-  name: "example"
+  id: "details",
+  name: "details",
+  value: data.details
 }) }}
 
 
