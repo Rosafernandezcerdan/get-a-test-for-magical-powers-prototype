@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% from "back-link/macro.njk" import backLink %}
+{% from "button/macro.njk" import button %}
+{% from "input/macro.njk" import input %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "symptoms",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <form action="/form-handler" method="post" novalidate>
+
+       {% from "textarea/macro.njk" import textarea %}
+
+{{ textarea({
+  label: {
+    text: "Can you provide more detail about your symptoms?",
+    size: "l",
+    isPageHeading: true
+  },
+  hint: {
+    text: "For example, if you have temperature shifts, eye alterations or sensory overload"
+  },
+  id: "example",
+  name: "example"
+}) }}
+
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
