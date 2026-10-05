@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% from "back-link/macro.njk" import backLink %}
+{% from "button/macro.njk" import button %}
+{% from "input/macro.njk" import input %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    href: "/details",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <h1 class="nhsuk-heading-l">
+        Your details
+      </h1>
+      <p> We need your details to send you the test at home.</p>
+
+      <form action="/check-answers" method="post" novalidate>
+
+        {{ input({
+          label: {
+            text: "First name",
+            size: "s"
+          },
+          id: "firstName",
+          name: "firstName",
+          value: data.firstName
+        }) }}
+
+        {{ input({
+          label: {
+            text: "Last name",
+            size: "s"
+          },
+          id: "lastName",
+          name: "lastName",
+          value: data.lastName
+        }) }}
+
+        {{ input({
+          label: {
+            text: "Relationship to the person being registered",
+            size: "s"
+          },
+          hint: {
+            text: "For example, a family member or friend"
+          },
+          id: "relationship",
+          name: "relationship",
+          value: data.relationship
+        }) }}
+
+        {{ input({
+          label: {
+            text: "Contact phone number",
+            size: "s"
+          },
+          id: "phoneNumber",
+          name: "phoneNumber",
+          value: data.phoneNumber,
+          width: 20,
+          type: "tel",
+          autocomplete: "tel"
+        }) }}
+
+        {{ button({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -35,14 +35,7 @@
      
       <p>You might not know them yet but be ready for revelations that can change your life  </p>
 
-      {% set insetTextHtml %}
-        <p>You can also get your NHS number in your <a href="#">NHS account</a>.</p>
-      {% endset %}
-
-      {{ insetText({
-        html: insetTextHtml | safe
-      }) }}
-
+    
       <h2 class="nhsuk-heading-l"> Who can use this service</h2>
       <p>You can use this service if you have already noticed some of the symptoms.</p>
       <p>You can also use this service for someone else.</p>
@@ -66,15 +59,12 @@
       <h2 class="nhsuk-heading-l">Before you start</h2>
       <p>You will need your:</p>
       <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>full name</li>
-        <li>date of birth</li>
-        <li>postcode of the address you've registered at a GP surgery with</li>
+        <li>Symptoms</li>
+        <li>contact details</li>
+        </li>
       </ul>
 
-      <p>You will have your NHS number sent to you by text, email or letter.</p>
-      <p>If you're using this service for someone else, enter their details. They will be sent their NHS number.</p>
-
-      <p>By using this service you agree to our <a href="#">terms of use</a> and confirm that you have read the <a href="#">privacy policy</a>.</p>
+      
 
       {% from "warning-callout/macro.njk" import warningCallout %}
 
@@ -89,12 +79,7 @@
         href: "/symptoms"
       }) }}
 
-      <h2 class="nhsuk-heading-m">Other ways to get your NHS number</h2>
-      <p>If you cannot get your NHS number online you can:</p>
-      <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>find it on any letter from the NHS like a prescription or appointment letter</li>
-        <li>call your GP surgery and ask them for your number</li>
-      </ul>
+    
 
     </div>
   </div>

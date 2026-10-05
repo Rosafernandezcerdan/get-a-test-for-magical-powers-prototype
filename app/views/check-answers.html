@@ -50,6 +50,57 @@
                 }
               ]
             }
+          },
+          {
+            key: {
+              text: "What are your contact details?"
+            },
+            value: {
+              text: data.firstName + " " + data.lastName
+            },
+            actions: {
+              items: [
+                {
+                  href: "/contact-details",
+                  text: "Change",
+                  visuallyHiddenText: "your contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Relationship to the person?"
+            },
+            value: {
+              text: data.relationship
+            },
+            actions: {
+              items: [
+                {
+                  href: "/contact-details",
+                  text: "Change",
+                  visuallyHiddenText: "your contact details"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "What is your contact phone number?"
+            },
+            value: {
+              text: data.phoneNumber
+            },
+            actions: {
+              items: [
+                {
+                  href: "/contact-details",
+                  text: "Change",
+                  visuallyHiddenText: "your contact details"
+                }
+              ]
+            }
           }
         ]
       }) }}
